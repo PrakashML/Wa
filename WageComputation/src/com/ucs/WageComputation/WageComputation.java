@@ -7,8 +7,7 @@ public class WageComputation {
     public static final int num_of_working_days = 20;
     public static final int max_hrs_in_month = 100;
 
-    public static void main(String[] args) {
-
+    public static void EmpWageCompute(){
         int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
         while (totalEmpHrs <= max_hrs_in_month && totalWorkingDays < num_of_working_days) {
             totalWorkingDays++;
@@ -28,5 +27,10 @@ public class WageComputation {
         }
         int totalEmpWage = totalEmpHrs * emp_rate_per_hour;
         System.out.println("Total Emp Wage: " + totalEmpWage);
+
+    }
+
+    public static void main(String[] args) {
+        EmpWageCompute();
     }
 }
