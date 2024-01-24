@@ -3,11 +3,8 @@ package com.ucs.WageComputation;
 public class WageComputation {
     public static final int is_part_time = 1;
     public static final int is_full_time = 2;
-    public static final int emp_rate_per_hour = 20;
-    public static final int num_of_working_days = 20;
-    public static final int max_hrs_in_month = 100;
 
-    public static void EmpWageCompute(){
+    public static void EmpWageCompute(String company, int emp_rate_per_hour,  int num_of_working_days, int max_hrs_in_month){
         int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
         while (totalEmpHrs <= max_hrs_in_month && totalWorkingDays < num_of_working_days) {
             totalWorkingDays++;
@@ -27,10 +24,11 @@ public class WageComputation {
         }
         int totalEmpWage = totalEmpHrs * emp_rate_per_hour;
         System.out.println("Total Emp Wage: " + totalEmpWage);
+        System.out.println("Company: " + company);
 
     }
 
     public static void main(String[] args) {
-        EmpWageCompute();
+        EmpWageCompute("TCS", 20, 20, 100);
     }
 }
