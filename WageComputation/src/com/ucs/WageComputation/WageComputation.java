@@ -20,6 +20,7 @@ public class WageComputation implements IComputeEmpWage {
     public void addCompanyEmpWage(String company, int emp_rate_per_hour, int num_of_working_days, int max_hrs_in_month){
         CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, emp_rate_per_hour, num_of_working_days, max_hrs_in_month);
         companyEmpWagesList.add(companyEmpWage);
+        companyToEmpWageMap.put(company, companyEmpWage);
     }
 
     public void computeEmpWage(){
@@ -65,6 +66,6 @@ public class WageComputation implements IComputeEmpWage {
         empWage.addCompanyEmpWage("Jio", 15, 23, 100);
         empWage.addCompanyEmpWage("DMart", 20, 20, 100);
         empWage.computeEmpWage();
+        System.out.println("Total Wage for DMart Company: " + empWage.getTotalWage("DMart"));
     }
-
 }
